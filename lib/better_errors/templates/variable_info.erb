@@ -36,10 +36,10 @@
     <div class='inset variables'>
         <table class="var_table">
             <% if rails_params %>
-                <tr><td class="name">Request parameters</td><td><pre><%== inspect_value rails_params.pretty_inspect %></pre></td></tr>
+                <tr><td class="name">Request parameters</td><td><pre><%== pretty_inspect rails_params %></pre></td></tr>
             <% end %>
             <% if rack_session %>
-                <tr><td class="name">Rack session</td><td><pre><%== inspect_value rack_session %></pre></td></tr>
+                <tr><td class="name">Rack session</td><td><pre><%== inspect_value.pretty_inspect rack_session %></pre></td></tr>
             <% end %>
         </table>
     </div>
@@ -50,7 +50,7 @@
     <div class='inset variables'>
         <table class="var_table">
             <% @frame.local_variables.each do |name, value| %>
-                <tr><td class="name"><%= name %></td><td><pre><%== inspect_value value %></pre></td></tr>
+                <tr><td class="name"><%= name %></td><td><pre><%== inspect_value pretty_inspect(value) %></pre></td></tr>
             <% end %>
         </table>
     </div>
